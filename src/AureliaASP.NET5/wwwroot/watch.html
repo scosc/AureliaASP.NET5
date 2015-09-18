@@ -1,0 +1,79 @@
+﻿<template>
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+        <header class="mdl-layout__header mdl-layout__header--scrollmdl-layout__header mdl-color--grey-900 mdl-color--grey-100 mdl-color-text--grey-600 is-casting-shadow">
+            <div class="mdl-layout--large-screen-only mdl-layout__header-row">
+                <h3><a asp-controller="watch" asp-action="watch">OneRepeat</a></h3>
+                <div class="mdl-textfield mdl-js-textfield" style="width:500px;margin-left:20px;">
+                    <input class="mdl-textfield__input nav-bar-control" type="text" id="videoPath" placeholder="paste youtube link here..." width="500" />
+
+                    <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored mdl-shadow--4dp mdl-color--accent" style="right: 20px;" id="okBtn" title="Go" value="Go!" onclick="parseAndPlay()">
+                        <span>go</span>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <main class="mdl-layout__content">
+            <div class="mdl-layout__tab-panel is-active" id="overview">
+                <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
+                    <div class="mdl-card mdl-cell mdl-cell--12-col">
+                        <div class="mdl-card__supporting-text">
+                            <h4 id="video-title"></h4>
+                            <div id="youtubeplayer" class="card">
+
+                            </div>
+                        </div>
+                        <div class="mdl-card__actions">
+                            <a href="#" class="mdl-button">Menu</a>
+                        </div>
+                    </div>                   
+                </section>
+
+                <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
+                    <div class="mdl-card mdl-cell mdl-cell--12-col">
+                        <div class="mdl-card__supporting-text">
+                            <h4 id="video-title">Instructions</h4>
+                            Replace <strong>youtube</strong> with <span>onerepeat</span> before the <strong>.com</strong> to watch it on repeat.
+                            <ol>
+                                <li>
+                                    <span>www.<strong>youtube</strong>.com/watch?v=8VgLKXD-BoY</span>
+                                </li>
+                                <li>
+                                    <span title="Would turn into"></span>
+                                    <a href="onerepeat.com/?v=8VgLKXD-BoY"><span>www.<span class="lor-logo-text">onerepeat</span>.com/watch?v=8VgLKXD-BoY</span></a>
+                                </li>
+                            </ol>
+                        </div>                       
+                    </div>
+                    <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" id="btn3">
+                        <i class="material-icons">more_vert</i>
+                    </button>
+                    <ul class="mdl-menu mdl-js-menu mdl-menu--bottom-right" for="btn3">
+                        <li class="mdl-menu__item" disabled>x</li>
+                    </ul>
+                </section>
+
+                <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
+                    <div class="mdl-card mdl-cell mdl-cell--12-col">
+                        <div class="mdl-card__supporting-text">
+                            <h4>Top songs repeated on OneRepeat from</h4><h4 id="country"></h4>
+                        </div>
+                    </div>
+                    <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" id="btn3">
+                        <i class="material-icons">more_vert</i>
+                    </button>
+                    <ul class="mdl-menu mdl-js-menu mdl-menu--bottom-right" for="btn3">
+                        <li class="mdl-menu__item" disabled>x</li>
+                    </ul>
+                </section>
+            </div>
+            <footer class="mdl-mega-footer">
+                <div class="mdl-mega-footer--bottom-section">
+                    <ul class="mdl-mega-footer--link-list">
+                        <li><p>&copy; 2015 - OneRepeat</p></li>
+                    </ul>
+                </div>
+            </footer>
+        </main>
+    </div>   
+</template>
